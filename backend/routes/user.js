@@ -70,7 +70,7 @@ router.post("/signin", async (req, res) => {
         if (!email || !password) {
             res.status(400);
             return res.json({
-                message: "input/s missing",
+                message: "input/s is/are missing",
             });
         }
 
@@ -172,7 +172,7 @@ router.get('/bulk',userMiddleware, async(req,res)=>{
 
     res.json({
         user:users.map(user=>({
-            email:user.username,
+            email:user.email,
             firstname:user.firstname,
             lastname:user.lastname,
             _id:user._id
